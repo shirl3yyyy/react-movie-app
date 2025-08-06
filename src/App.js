@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import MovieList from './components/MovieList';
 import Filter from './components/Filter';
-import {BrowserRouter as} from react-router-dom
+import {Routes, Route } from 'react-router-dom';
 
 const App = () => {
   const [movies, setMovies] = useState([
