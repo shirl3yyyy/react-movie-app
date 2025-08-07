@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
-import './App.css';
-import MovieList from './components/MovieList';
-import Filter from './components/Filter';
-import {Routes, Route } from 'react-router-dom';
+import React, {useState} from "react";
+import "./App.css";
+import MovieList from "./components/MovieList";
+import Filter from "./components/Filter";
+import MovieDetail from "./components/MovieDetail";
+import {Routes, Route } from "react-router-dom";
 
 const App = () => {
   const [movies, setMovies] = useState([
@@ -52,8 +53,21 @@ const App = () => {
   return (
     <div className="App">
     <h1>🎬 Movie App</h1>
+     <Routes>
+        {/* Home route — filter + list */}
+        <Route
+          path="/"element={
+          <>
     <Filter setSearchTitle={setSearchTitle} setSearchRating={setSearchRating} />
     <MovieList movies={filteredMovies} />
+    </>
+    }
+    />
+
+    <Route
+    path="/movies/:id" element={<MovieDetail movies={movies} />}
+    />
+    </Routes>
     </div>
   );
 };

@@ -6,7 +6,7 @@ const MovieCard = ({ movie }) => {
 
   return (
     <Link
-    to={`/movies?${id}`}>
+    to={`/movies/${id}`}>
     
     <div className="movie-card">
       <img src={posterURL} alt={title} />
